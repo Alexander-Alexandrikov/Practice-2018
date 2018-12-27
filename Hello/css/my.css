@@ -1,16 +1,22 @@
 body{
-    background-color: rgb(239, 229, 248);
-    color: rgb(29, 57, 150);
+    background-color: #EAEDF1;
+    color: #33495F;
     margin-left: auto;
     margin-right: auto;
-    font-family:italic;
+    font-family: ALSArtemiusSerif,Helvetica,sans-serif;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4{
+    font-family: ALSArtemiusSerif,Helvetica,sans-serif;
 }
 
 /* стили для хедера */
-.my-header{
-    width: 90%;
-    height: 250px;
-    margin: 80px 5% 30px;
+.my-header{ 
+    width: 100%;
+    height: 295px;
+    margin: 82px 50px 40px 80px;
 }
 
 .header-block{
@@ -20,9 +26,9 @@ body{
 }
 
 .avatar-parent{    
-    width: 30%;
+    width: 435px;
     float: left;
-    margin-right: 10%;
+    margin-right: 50px;
 }
 
 .avatar-child{
@@ -39,8 +45,8 @@ body{
     border-radius: 100px;
     display: block;
     margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
+    margin-right: 45px;
+    margin-top: 38px;
    }
 
    .round2 {
@@ -49,7 +55,7 @@ body{
     width:30px;
     height:30px;
     margin-top: -25px;
-    margin-left:4%;
+    margin-left:5%;
     margin-right: 4%;
    }
   
@@ -66,10 +72,18 @@ body{
 .about-me{
     width: 50%;
     float: right;
+    margin-left:-100px;
+    line-height: 0.7;
 }
  
 .about-me h3{
-    margin-top:60px;
+    margin-top:90px;
+    margin-bottom: -10px;
+}
+
+
+.about-me p{
+    margin-top:-35px;
     margin-bottom: -10px;
 }
 
@@ -92,25 +106,25 @@ body{
 
 
 .age{
-    background-color: rgb(46, 220, 226);
+    background-color: #16C4EC;
     width: 25%;
     float: left;
 }
 
 .language{
-    background-color: rgb(224, 64, 99);
+    background-color: #FA5351;
     width: 25%;
     float: left;
 }
 
 .drive-license{
-    background-color: rgb(46, 220, 226);
+    background-color: #10CDC1;
     width: 25%;
     float: left;
 }
 
 .smoking{
-    background-color: rgb(40, 46, 102);
+    background-color: #33495F;
     width: 25%;
     float: right;
 }
@@ -119,20 +133,21 @@ body{
 
 
 .presentation-parent{   
-    width:60%; 
+    width:826px; 
     float: right;
+    margin-right:0px;
 }
 
 
 .presentation-child{
-    width: 50%;
+    width: 60%;
     float: left;
 }
 
 .presentation-text{
     width:96%;
     margin-left:5%;
-    margin-right:5%;
+    margin-right:50px;
     height: 70%; 
     margin-top:10%;
     text-align: left;
@@ -140,10 +155,11 @@ body{
 
 .presentation-text h2{
     text-align: center;
+    font-size:30px;
 }
 
 .presentation-text span{
-    color:rgb(46, 220, 226);
+    color:#16C4EC;
 }
 
 .social{
@@ -157,30 +173,36 @@ body{
     background: white url("images/vk.png") no-repeate 0 0;
 }
 
+
 .header-icon{
     width:16%;
 }
 
 .contacts{
-    width: 50%;
+    width: 40%;
     float: right;
     text-align: center;
 }
 
 .contacts-text{
-    margin-top: 80px;
-    margin-right: 10%;
+    margin-top: 110px;
+    margin-right: 15%;
     margin-left: 10%;
-    font-size:25px;
+    font-size:25px;    
+    line-height: 1;
+    text-align: justify;
+    font-size: 22px;
 }
 
 .contacts-text span{
-    color: red;
+    color: #FF0000;
+    letter-spacing: 3px;
 }
 
 .contacts-text hr{
     color: grey;
     background-color: grey;
+    margin-top: 30px;
 }
 
 .social-vk{
@@ -191,10 +213,9 @@ body{
 /* стили для контента */
 
 .content{
-    width: 90%;
-    height: 1000px;
-    margin: 0 5% 10px;
-    background-color: black;
+    width: 100%;
+    height: 1100px;
+    margin: 0px 50px 40px 80px;
 }
 
 .content-block{
@@ -203,68 +224,98 @@ body{
 }
 
 .left-bar{
-    width: 45%;
+    width: 634px;
     float: left;
-    background-color: rgb(239, 229, 248);
+}
+
+.left-bar h2{
+
 }
 
 .center-line{
-    width: 10%;
+    width: 50px;
     float: left;
-    background-color: rgb(239, 229, 248);
 }
 
 .right-bar{
-    width: 45%;
+    width: 625px;
     float: right;
-    background-color: rgb(239, 229, 248);
+    line-height: 1.5;
+
+}
+
+.right-bar p{
+    font-size: 12px;
 }
 
 .block-left1{
-    height:28%;
+    height:312px;
+    width:634;
     background-color: white;
-    margin-bottom:4%;
+    margin-bottom:32px;
     padding: 2%;
 }
 
+.block-left12{
+    height:298px;
+    width:634;
+    background-color: white;
+    margin-bottom:32px;
+    padding: 2%;
+}
+
+
 .sub-block{
     height:30%;
-    width:100%;
+    width:100%;   
+    padding:10px;
 }
 
 .sub-text{
     height:70%;
     width:100%;
+    padding:10px;
 }
 
 .sub-block2{
     height:50%;
     width:100%;
+    padding-bottom:20px;
+    padding-top: -20px;
 }
 
 .sub-text2{
     height:50%;
     width:100%;
+    padding:20px;
+    padding-bottom: 0;
 }
 
 .sub-block3{
     height:50%;
     width:100%;
+    padding-bottom:20px;
+    padding-top: -30px;
 }
 
 .sub-text3{
     height:50%;
     width:100%;
+    padding:20px;
+    padding-bottom: 0px;
 }
 
 .sub-block4{
     height:50%;
     width:100%;
+    padding:0px;
 }
 
 .sub-text4{
     height:50%;
     width:100%;
+    padding:25px 25px 0 25px;
+    margin-bottom: -20px;
 }
 
 .sub-block3 img{
@@ -277,35 +328,36 @@ body{
 
 .sub-left{
     float:left;
-    width:33%;
-    margin:2%;
+    margin-left: 50px;
+    margin-top:10px;
 }
 
 .sub-right{
     float:right;
-    margin:2%;
 }
 
 .block-left2{
-    height:14%;
+    height:145px;
     background-color: white;
-    margin-bottom:4%;
+    margin-bottom:30px;
     padding: 2%;
 }
 
 .block-right1{
-    height:14%;
-    background-color: #cccccc;
-    margin-bottom:4%;
+    height:154px;
+    background-color: #DBE1E8;
+    margin-bottom:34px;
     padding: 1%;
 }
 
 .block-right2{
-    height:13%;
-    background-color: #cccccc;
-    margin-bottom:4%;
+    height:115px;
+    background-color: #DBE1E8;
+    margin-bottom:35px;
+    margin-top:35px;
     padding: 1%;
 }
+
 
 .line{
     margin-bottom:4%;
@@ -314,13 +366,19 @@ body{
 } 
 
 .block-right3{
-    height:33%;
+    height:400px;
     background-color: white;
     margin-bottom:4%;
+    padding: 4px;
+    
 }
 
 .icons-bar{
-    height: 30%;
+    height: 30%;  
+}
+
+.icons-bar p{
+    font-size: 19px;
 }
 
 .big-icon-first{
@@ -328,6 +386,7 @@ body{
     float: left;
     background-color: white;
     margin-left:3%;
+    margin-right: 5px;
 }
 
 .big-icon{
@@ -335,32 +394,37 @@ body{
     float: left;
     background-color: white;
     margin-left:1%;
+    margin-right: 4px;
 }
 .big-icon-last{
     width: 15%;
     float: right;
     background-color: white;
-    margin-right:1%;
+    margin-right: -5px;
 }
 
 .indicators-bar{
     height: 60%;
-    margin-top:10%
+    margin-top:45px;
+    line-height: 1.2;
+    
 }
 
 .indicators-left{
     width: 45%;
     float:left;
+    padding:0 5px 0 5px;
 }
 
 .indicators-right{
     width: 45%;
     float:right;
+    padding:0 5px 0 0px;
 }
 
 /* ПОДВАЛ */
 footer{
-background-color: rgb(239, 229, 248);
+background-color: #EAEDF1;
 height: 80px;
 margin-top:50px;
 }
@@ -374,37 +438,37 @@ footer p{
 
 footer p span{
     color: grey;
-    font-size: 50px;
-    font-family: serif;
-    font-style: normal;
+    font-size: 100px;
 }
 
 .progress-container{
     margin: 10px;
     margin-top: -5px;
+    margin-bottom: 23px;
 }
 
   progress {
     border:0;
-    width: 220px;
+    width: 260px;
     height: 17px;
     border-radius: 10px;
-    background: #17ecdb;
+    background: #10CDC1;
     
 }
+
 progress::-webkit-progress-bar {
-    width: 220px;
+    width: 260px;
     height: 17px;
     border-radius: 10px;
-    background: #cccccc;
+    background: #DBE1E8;
 }
 progress::-webkit-progress-value {
     border-radius: 10px;
-    background: #17ecdb;
+    background: #10CDC1;
 }
 progress::-moz-progress-bar {
     border-radius: 10px;
-    background: #17ecdb;
+    background: #10CDC1;
 }
 
 
@@ -414,35 +478,67 @@ progress::-moz-progress-bar {
 }
 
 .font-big{
-    font-size: 20px;
+    font-size: 24px;
 }
 
+
 .green{
-    color:green;
+    color:#04BCA6;
 }
 
 .grey{
-    color:grey;
+    color:#9EA7B4;
 }
 
 .blue{
-    color: rgb(40, 199, 199);
+    color: #00B9D8;
 }
 
 .submit{
-    background-color: #17ecdb;
+    background-color: #16C4EC;
     color:white;
     border:0;
-    border-radius: 10%;
-    height:20px;
-    width: 110px;
+    border-radius: 5%;
+    height:35px;
+    width: 220px;
+    margin-right:18px;
+    margin-top: 1px;
+}
+
+.block-right1 .submit{
+    background-color: #10CDC1;
+    margin-top: -20px;
 }
 
 .submit-grey{
-    background-color: rgb(180, 178, 178);
+    background-color: #B0BBCA;
     color:white;
     border:0;
-    border-radius: 10%;
+    
+    border-radius: 5%;
+    height:35px;
+    width: 220px;
+    margin-right:8px;
+    margin-top: -40px;
+    margin-bottom: 15px;
+}
+
+.about-me p{
+    color:#586879;
+    margin-top: 30px;
+}
+h3{
+    font-size: 27px;
+}
+
+.procent{
+    width:40px;
     height:20px;
-    width: 110px;
+    background:#34495E;
+    border-radius: 20%;
+    float:right;
+    color:white;
+    font-size: 12px;
+    text-align: center;
+    margin-top:-3px;
 }
