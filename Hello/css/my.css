@@ -235,6 +235,18 @@ h1, h2, h3, h4{
     float: left;
 }
 
+.left-bar .sub-left{
+    margin-left:15px;
+    margin-right: 25px;
+    margin-bottom: -30px;
+    margin-top: -15px;
+
+}
+
+.left-bar .sub-right{
+    margin-top: -15px;
+    margin-bottom: -30px;
+}
 
 .center-line{
     width: 50px;
@@ -281,11 +293,20 @@ h1, h2, h3, h4{
 
 
 .sub-block{
-    height:30%;
+    height:50px;
     width:100%;   
     padding:0px;
     /* padding-bottom: -10px; */
     margin-bottom: -10px;
+}
+
+.block-left1 .sub-block{
+    padding-top: 7px;
+    padding-left: 2px;
+}
+
+.block-left1 .sub-text{
+    height:30px;
 }
 
 .sub-text{
