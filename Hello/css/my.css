@@ -93,17 +93,21 @@ h1, h2, h3, h4{
 }
 
 .color-block{
-    margin-top: 1px;;
-    margin-bottom:auto;
+    margin-top: 0px;;
+    /* margin-bottom:auto; */
+    padding-top: -10px;
 
 }
 
 .color-blocks p{
     text-align:center;
-    margin-bottom:-20px;
+    /* margin-bottom:-20px; */
+    margin-top: 0px;
 }
 
-
+.color-blocks img{
+    
+}
 
 .age{
     background-color: #16C4EC;
@@ -140,21 +144,22 @@ h1, h2, h3, h4{
 
 
 .presentation-child{
-    width: 60%;
-    float: left;
+    width: 460px;
+    float: left;    
+    padding-left: 10px;
 }
 
 .presentation-text{
     width:96%;
     margin-left:5%;
-    margin-right:50px;
+    margin-right:70px;
     height: 70%; 
     margin-top:10%;
     text-align: left;
 }
 
 .presentation-text h2{
-    text-align: center;
+    text-align: left;
     font-size:30px;
 }
 
@@ -164,10 +169,10 @@ h1, h2, h3, h4{
 
 .social{
     background-color: brown;
-    width:96%;
+    width:100%;
     height: 30%;
-    margin-left:2%;
-    margin-right:2%;
+    /* margin-left:3%; */
+    margin-right:30px;
     display:inline-block;
     vertical-align: middle;
     background: white url("images/vk.png") no-repeate 0 0;
@@ -185,9 +190,9 @@ h1, h2, h3, h4{
 }
 
 .contacts-text{
-    margin-top: 110px;
-    margin-right: 15%;
-    margin-left: 10%;
+    margin-top: 115px;
+    margin-right: 35px;
+    margin-left: 20px;
     font-size:25px;    
     line-height: 1;
     text-align: justify;
@@ -196,7 +201,7 @@ h1, h2, h3, h4{
 
 .contacts-text span{
     color: #FF0000;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 }
 
 .contacts-text hr{
@@ -541,4 +546,8 @@ h3{
     font-size: 12px;
     text-align: center;
     margin-top:-3px;
+}
+    
+.contacts-text br{
+    height: 20px;
 }
