@@ -60,6 +60,7 @@ var explosions = [];
 
 var megaliths = [];
 var manna = [];
+var mannaCollis = [];
 
 var lastFire = Date.now();
 var gameTime = 0;
@@ -104,7 +105,7 @@ function update(dt) {
             pos: [Math.random() * (canvas.width - 39),
                   Math.random() * (canvas.height - 39)],
             sprite: new Sprite('img/sprites_02.png', [0, 160], [60, 55],
-                               6, [0, 1, 2, 3, 2, 1])
+                               6, [0, 1, 0])
         });
     }
 
@@ -131,19 +132,75 @@ function update(dt) {
 
 function handleInput(dt) {
     if(input.isDown('DOWN') || input.isDown('s')) {
-        player.pos[1] += playerSpeed * dt;
+        var megalithFlagD = false;
+        for(var i=0; i<megaliths.length; i++) {
+            var pos = megaliths[i].pos;
+            var size = megaliths[i].sprite.size;
+            if(boxCollides(pos, size, player.pos, player.sprite.size)) {
+                megalithFlagD = true;
+            }
+        }
+        if(megalithFlagD == false) {
+            player.pos[1] += playerSpeed * dt;
+        }     
+        else {
+            megalithFlagD = false;
+            player.pos[1] -= playerSpeed * dt;
+        }        
     }
 
     if(input.isDown('UP') || input.isDown('w')) {
-        player.pos[1] -= playerSpeed * dt;
+        var megalithFlagU = false;
+        for(var i=0; i<megaliths.length; i++) {
+            var pos = megaliths[i].pos;
+            var size = megaliths[i].sprite.size;
+            if(boxCollides(pos, size, player.pos, player.sprite.size)) {
+                megalithFlagU = true;
+            }
+        }
+        if(megalithFlagU == false) {
+            player.pos[1] -= playerSpeed * dt;
+        }     
+        else {
+            megalithFlagU = false;
+            player.pos[1] += playerSpeed * dt;
+        }                
     }
 
     if(input.isDown('LEFT') || input.isDown('a')) {
-        player.pos[0] -= playerSpeed * dt;
+        var megalithFlagL = false;
+        for(var i=0; i<megaliths.length; i++) {
+            var pos = megaliths[i].pos;
+            var size = megaliths[i].sprite.size;
+            if(boxCollides(pos, size, player.pos, player.sprite.size)) {
+                megalithFlagL = true;
+            }
+        }
+        if(megalithFlagL == false) {
+            player.pos[0] -= playerSpeed * dt;
+        }     
+        else {
+            megalithFlagL = false;
+            player.pos[0] += playerSpeed * dt;
+        }               
     }
 
     if(input.isDown('RIGHT') || input.isDown('d')) {
-        player.pos[0] += playerSpeed * dt;
+        var megalithFlagR = false;
+        for(var i=0; i<megaliths.length; i++) {
+            var pos = megaliths[i].pos;
+            var size = megaliths[i].sprite.size;
+            if(boxCollides(pos, size, player.pos, player.sprite.size)) {
+                megalithFlagR = true;
+            }
+        }
+        if(megalithFlagR == false) {
+            player.pos[0] += playerSpeed * dt;
+        }     
+        else {
+            megalithFlagR = false;
+            player.pos[0] -= playerSpeed * (dt);
+        }      
     }
 
     if(input.isDown('SPACE') &&
@@ -251,6 +308,17 @@ function updateEntities(dt) {
     for(var i=0; i<manna.length; i++) {
         manna[i].sprite.update(dt);
     }
+    
+    //update mannaCollis
+    for(var i=0; i<mannaCollis.length; i++) {
+        mannaCollis[i].sprite.update(dt);
+
+        // Remove if animation is done
+        if(mannaCollis[i].sprite.done) {
+            mannaCollis.splice(i, 1);
+            i--;
+        }
+    }
 }
 
 // Collisions
@@ -326,21 +394,28 @@ function checkCollisions() {
             }
         }
 
-        if(boxCollides(pos, size, player.pos, player.sprite.size)) {
-            gameOver();
-        }
+        // if(boxCollides(pos, size, player.pos, player.sprite.size)) {
+        //     gameOver();
+        // }
     }
 
     for(var i=0; i<manna.length; i++) {
         var pos = manna[i].pos;
         var size = manna[i].sprite.size;
-        if(boxCollides(pos, size, player.pos, player.sprite.size)) {
-            // Remove the enemy
+        if(boxCollides(pos, size, player.pos, player.sprite.size)) {            
+            // Remove the manna
             manna.splice(i, 1);
             i--;
 
             // Add manna
             mannaCount += 100;
+            
+            // Add an mannaCollis
+            mannaCollis.push({
+                pos: pos,
+                sprite: new Sprite('img/sprites_02.png', [0, 160], [60, 55],
+                4, [0, 1, 2, 3], null, true)
+            });        
         }
     }
 }
@@ -379,6 +454,8 @@ function render() {
     
     renderEntities(megaliths);
     renderEntities(manna);
+    renderEntities(mannaCollis);
+    
 };
 
 function renderEntities(list) {
