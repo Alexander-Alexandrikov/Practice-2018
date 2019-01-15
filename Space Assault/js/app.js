@@ -64,7 +64,7 @@ var mannaCollis = [];
 
 var lastFire = Date.now();
 var gameTime = 0;
-var isGameOver;
+var isGameOver = false;
 var terrainPattern;
 
 var score = 0;
@@ -394,9 +394,6 @@ function checkCollisions() {
             }
         }
 
-        // if(boxCollides(pos, size, player.pos, player.sprite.size)) {
-        //     gameOver();
-        // }
     }
 
     for(var i=0; i<manna.length; i++) {
