@@ -27,10 +27,20 @@ canvas {
     color: #757575;
 }
 
-#score {
-    float: right;
-    color: white;
+#counts {    
     font-size: 2em;
+    display: block;
+}
+
+#score {
+    color: white;
+    float:right;
+}
+
+#manna {
+    color: yellow;
+    float:left;
+    margin-left: 100px;
 }
 
 .key {

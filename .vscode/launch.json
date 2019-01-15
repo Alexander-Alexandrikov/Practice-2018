@@ -7,7 +7,7 @@
             "name": "Launch index.html",
             "type": "chrome",
             "request": "launch",
-            "file": "${workspaceRoot}/Hello/Homepage.html",
+            "file": "${workspaceRoot}/Space Assault/index.html",
             "webRoot": "${workspaceRoot}"
             }
     ]
