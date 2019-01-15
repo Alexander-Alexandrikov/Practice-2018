@@ -134,11 +134,13 @@ function handleInput(dt) {
     if(input.isDown('DOWN') || input.isDown('s')) {
         var megalithFlagD = false;
         for(var i=0; i<megaliths.length; i++) {
-            var pos = megaliths[i].pos;
             var size = megaliths[i].sprite.size;
+            var pos = megaliths[i].pos;    
+            pos[1] -= 25;       
             if(boxCollides(pos, size, player.pos, player.sprite.size)) {
                 megalithFlagD = true;
             }
+            pos[1] += 25;
         }
         if(megalithFlagD == false) {
             player.pos[1] += playerSpeed * dt;
@@ -152,11 +154,13 @@ function handleInput(dt) {
     if(input.isDown('UP') || input.isDown('w')) {
         var megalithFlagU = false;
         for(var i=0; i<megaliths.length; i++) {
-            var pos = megaliths[i].pos;
             var size = megaliths[i].sprite.size;
+            var pos = megaliths[i].pos;  
+            pos[1] += 25;          
             if(boxCollides(pos, size, player.pos, player.sprite.size)) {
                 megalithFlagU = true;
             }
+            pos[1] -= 25;
         }
         if(megalithFlagU == false) {
             player.pos[1] -= playerSpeed * dt;
@@ -170,11 +174,13 @@ function handleInput(dt) {
     if(input.isDown('LEFT') || input.isDown('a')) {
         var megalithFlagL = false;
         for(var i=0; i<megaliths.length; i++) {
-            var pos = megaliths[i].pos;
             var size = megaliths[i].sprite.size;
+            var pos = megaliths[i].pos; 
+            pos[0] += 25;           
             if(boxCollides(pos, size, player.pos, player.sprite.size)) {
                 megalithFlagL = true;
             }
+            pos[0] -= 25;
         }
         if(megalithFlagL == false) {
             player.pos[0] -= playerSpeed * dt;
@@ -182,24 +188,28 @@ function handleInput(dt) {
         else {
             megalithFlagL = false;
             player.pos[0] += playerSpeed * dt;
-        }               
+        }                
     }
 
     if(input.isDown('RIGHT') || input.isDown('d')) {
         var megalithFlagR = false;
         for(var i=0; i<megaliths.length; i++) {
-            var pos = megaliths[i].pos;
             var size = megaliths[i].sprite.size;
+            var pos = megaliths[i].pos;
+            pos[0] -= 25;
+            
             if(boxCollides(pos, size, player.pos, player.sprite.size)) {
                 megalithFlagR = true;
             }
+            pos[0] += 25;
         }
+
         if(megalithFlagR == false) {
             player.pos[0] += playerSpeed * dt;
         }     
         else {
             megalithFlagR = false;
-            player.pos[0] -= playerSpeed * (dt);
+            player.pos[0] -= playerSpeed * dt;
         }      
     }
 
