@@ -136,17 +136,21 @@ function handleInput(dt) {
         for(var i=0; i<megaliths.length; i++) {
             var pos = megaliths[i].pos;
             var size = megaliths[i].sprite.size;
-            if(boxCollides(pos, size, player.pos, player.sprite.size)) {
-                megalithFlagD = true;
+            var pos2 =  player.pos;
+            var size2 =  player.sprite.size;         
+            if(collides(pos[0], pos[1],
+                pos[0] + size[0], pos[1] + size[1],
+                pos2[0], pos2[1] + playerSpeed * dt,
+                pos2[0] + size2[0], pos2[1]  + playerSpeed * dt + size2[1])) {
+                    megalithFlagD = true;
             }
-        }
+         }
         if(megalithFlagD == false) {
             player.pos[1] += playerSpeed * dt;
         }     
         else {
             megalithFlagD = false;
-            player.pos[1] -= playerSpeed * dt;
-        }        
+        }
     }
 
     if(input.isDown('UP') || input.isDown('w')) {
@@ -154,17 +158,21 @@ function handleInput(dt) {
         for(var i=0; i<megaliths.length; i++) {
             var pos = megaliths[i].pos;
             var size = megaliths[i].sprite.size;
-            if(boxCollides(pos, size, player.pos, player.sprite.size)) {
-                megalithFlagU = true;
+            var pos2 =  player.pos;
+            var size2 =  player.sprite.size;         
+            if(collides(pos[0], pos[1],
+                pos[0] + size[0], pos[1] + size[1],
+                pos2[0], pos2[1] - playerSpeed * dt,
+                pos2[0] + size2[0], pos2[1] + size2[1])) {
+                    megalithFlagU = true;
             }
-        }
+         }
         if(megalithFlagU == false) {
             player.pos[1] -= playerSpeed * dt;
         }     
         else {
             megalithFlagU = false;
-            player.pos[1] += playerSpeed * dt;
-        }                
+        }        
     }
 
     if(input.isDown('LEFT') || input.isDown('a')) {
@@ -172,35 +180,43 @@ function handleInput(dt) {
         for(var i=0; i<megaliths.length; i++) {
             var pos = megaliths[i].pos;
             var size = megaliths[i].sprite.size;
-            if(boxCollides(pos, size, player.pos, player.sprite.size)) {
-                megalithFlagL = true;
+            var pos2 =  player.pos;
+            var size2 =  player.sprite.size;         
+            if(collides(pos[0], pos[1],
+                pos[0] + size[0], pos[1] + size[1],
+                pos2[0] - playerSpeed * dt, pos2[1],
+                pos2[0] + size2[0], pos2[1] + size2[1])) {
+                    megalithFlagL = true;
             }
-        }
+         }
         if(megalithFlagL == false) {
             player.pos[0] -= playerSpeed * dt;
         }     
         else {
             megalithFlagL = false;
-            player.pos[0] += playerSpeed * dt;
-        }               
+        }        
     }
 
     if(input.isDown('RIGHT') || input.isDown('d')) {
         var megalithFlagR = false;
         for(var i=0; i<megaliths.length; i++) {
             var pos = megaliths[i].pos;
-            var size = megaliths[i].sprite.size;
-            if(boxCollides(pos, size, player.pos, player.sprite.size)) {
-                megalithFlagR = true;
+            var size = megaliths[i].sprite.size; 
+            var pos2 =  player.pos;
+            var size2 =  player.sprite.size;         
+            if(collides(pos[0], pos[1],
+                pos[0] + size[0], pos[1] + size[1],
+                pos2[0] + playerSpeed * dt, pos2[1],
+                pos2[0] + playerSpeed * dt + size2[0], pos2[1] + size2[1])) {
+                    megalithFlagR = true;
             }
-        }
+         }
         if(megalithFlagR == false) {
             player.pos[0] += playerSpeed * dt;
         }     
         else {
             megalithFlagR = false;
-            player.pos[0] -= playerSpeed * (dt);
-        }      
+        }
     }
 
     if(input.isDown('SPACE') &&
